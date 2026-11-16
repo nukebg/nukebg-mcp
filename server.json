@@ -1,0 +1,26 @@
+{
+  "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
+  "name": "io.github.nukebg/nukebg",
+  "title": "NukeBG",
+  "description": "Remove image backgrounds, remove objects and upscale images. Transparent PNG or Amazon-ready white.",
+  "version": "1.0.0",
+  "websiteUrl": "https://nukebg.com/mcp-server",
+  "remotes": [
+    {
+      "type": "streamable-http",
+      "url": "https://api.nukebg.com/mcp",
+      "headers": [
+        {
+          "name": "X-Api-Key",
+          "description": "Your NukeBG API key (create one at https://nukebg.com/account; new accounts get 50 free credits)",
+          "isRequired": true,
+          "isSecret": true
+        }
+      ]
+    }
+  ],
+  "repository": {
+    "url": "https://github.com/nukebg/nukebg-mcp",
+    "source": "github"
+  }
+}
