@@ -79,8 +79,7 @@ gemini extensions install https://github.com/nukebg/nukebg-mcp
   "mcpServers": {
     "nukebg": {
       "command": "npx",
-      "args": ["-y", "mcp-remote", "https://api.nukebg.com/mcp", "--header", "X-Api-Key:${NUKEBG_API_KEY}"],
-      "env": { "NUKEBG_API_KEY": "YOUR_KEY" }
+      "args": ["-y", "mcp-remote", "https://api.nukebg.com/mcp", "--header", "X-Api-Key:YOUR_KEY"]
     }
   }
 }

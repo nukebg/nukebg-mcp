@@ -2,7 +2,7 @@
 name: nukebg-images
 description: Remove image backgrounds, put products on pure white or marketplace sizes (Amazon, Shopify, Etsy, eBay), remove objects from photos and upscale images with NukeBG. Use when the user wants a transparent PNG, a cutout, a white-background product photo, a marketplace-ready image, an object erased, or an image enlarged.
 license: MIT
-compatibility: Needs the NukeBG MCP server (https://api.nukebg.com/mcp) or network access to api.nukebg.com, and a NukeBG API key in NUKEBG_API_KEY.
+compatibility: Needs the NukeBG MCP server (https://api.nukebg.com/mcp) or network access to api.nukebg.com, and the user's NukeBG API key.
 ---
 
 # NukeBG image tools
@@ -29,11 +29,11 @@ Good defaults:
 
 ## Without the MCP server
 
-Call the REST API with the key in the `X-Api-Key` header:
+Call the REST API with the user's key in the `X-Api-Key` header (ask the user for it):
 
 ```bash
 curl -f https://api.nukebg.com/v1/cutouts \
-  -H "X-Api-Key: $NUKEBG_API_KEY" \
+  -H "X-Api-Key: YOUR_NUKEBG_KEY" \
   -F image_file=@photo.jpg \
   -F background=white -F size=amazon \
   -o photo-amazon.jpg
