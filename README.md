@@ -25,7 +25,7 @@ Create an API key at https://nukebg.com/account first.
 
 **Claude Code plugin** (MCP server plus the `nukebg-images` skill)
 
-This repo is a Claude Code plugin marketplace. Set `NUKEBG_API_KEY` in your environment, then:
+This repo is a Claude Code plugin marketplace. Install it, and Claude Code asks for your NukeBG API key (stored as a sensitive plugin setting):
 
 ```bash
 claude plugin marketplace add nukebg/nukebg-mcp
