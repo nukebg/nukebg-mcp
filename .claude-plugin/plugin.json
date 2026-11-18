@@ -27,5 +27,9 @@
       "sensitive": true,
       "required": true
     }
-  }
+  },
+  "displayName": "NukeBG",
+  "supportUrl": "mailto:nukebg@volods.com",
+  "termsOfServiceUrl": "https://nukebg.com/terms",
+  "documentationUrl": "https://nukebg.com/mcp-server"
 }
