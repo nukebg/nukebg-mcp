@@ -1,6 +1,6 @@
 {
   "name": "nukebg",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Remove image backgrounds, remove objects and upscale images with NukeBG: transparent PNGs, pure white and Amazon, Shopify, Etsy and eBay sizes.",
   "author": {
     "name": "NukeBG",
@@ -19,15 +19,6 @@
   ],
   "privacyPolicyUrl": "https://nukebg.com/privacy",
   "icon": ".claude-plugin/icon.png",
-  "userConfig": {
-    "api_key": {
-      "type": "string",
-      "title": "NukeBG API key",
-      "description": "Create one at https://nukebg.com/account (new accounts get 50 free credits).",
-      "sensitive": true,
-      "required": true
-    }
-  },
   "displayName": "NukeBG",
   "supportUrl": "mailto:nukebg@volods.com",
   "termsOfServiceUrl": "https://nukebg.com/terms",

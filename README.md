@@ -36,7 +36,7 @@ Create an API key at https://nukebg.com/account first.
 
 **Claude Code plugin** (MCP server plus the `nukebg-images` skill)
 
-This repo is a Claude Code plugin marketplace. Install it, and Claude Code asks for your NukeBG API key (stored as a sensitive plugin setting):
+This repo is a Claude Code plugin marketplace. Install it, then run `/mcp` and choose Authenticate to sign in to NukeBG (OAuth, no key to copy):
 
 ```bash
 claude plugin marketplace add nukebg/nukebg-mcp
@@ -49,7 +49,7 @@ claude plugin install nukebg@nukebg
 claude mcp add --transport http nukebg https://api.nukebg.com/mcp --header "X-Api-Key: YOUR_KEY"
 ```
 
-**Gemini CLI** (extension; set `NUKEBG_API_KEY` first)
+**Gemini CLI** (extension; signs in to NukeBG with OAuth on first use)
 
 ```bash
 gemini extensions install https://github.com/nukebg/nukebg-mcp

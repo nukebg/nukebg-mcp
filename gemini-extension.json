@@ -1,14 +1,11 @@
 {
   "name": "nukebg",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Remove image backgrounds, remove objects and upscale images with NukeBG.",
   "contextFileName": "skills/nukebg-images/SKILL.md",
   "mcpServers": {
     "nukebg": {
-      "httpUrl": "https://api.nukebg.com/mcp",
-      "headers": {
-        "X-Api-Key": "${NUKEBG_API_KEY}"
-      }
+      "httpUrl": "https://api.nukebg.com/mcp"
     }
   }
 }
