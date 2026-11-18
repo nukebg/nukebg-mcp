@@ -3,7 +3,7 @@
   "name": "io.github.nukebg/nukebg",
   "title": "NukeBG",
   "description": "Remove image backgrounds, remove objects and upscale images. Transparent PNG or Amazon-ready white.",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "websiteUrl": "https://nukebg.com/mcp-server",
   "remotes": [
     {
@@ -12,8 +12,8 @@
       "headers": [
         {
           "name": "X-Api-Key",
-          "description": "Your NukeBG API key (create one at https://nukebg.com/account; new accounts get 50 free credits)",
-          "isRequired": true,
+          "description": "Optional: your NukeBG API key (create one at https://nukebg.com/account). Leave it out to sign in with OAuth instead; new accounts get 50 free credits.",
+          "isRequired": false,
           "isSecret": true
         }
       ]

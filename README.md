@@ -1,10 +1,10 @@
 # NukeBG MCP server
 
-NukeBG runs a remote [Model Context Protocol](https://modelcontextprotocol.io) server, so AI assistants and agents (Claude, Cursor, VS Code, Windsurf and others) can remove backgrounds, remove objects and upscale images with your NukeBG credits.
+NukeBG runs a remote [Model Context Protocol](https://modelcontextprotocol.io) server, so AI assistants and agents (Claude, ChatGPT, Cursor, VS Code, Windsurf and others) can remove backgrounds, remove objects and upscale images with your NukeBG credits.
 
 - URL: `https://api.nukebg.com/mcp`
 - Transport: Streamable HTTP (stateless, JSON responses)
-- Auth: your NukeBG API key in the `X-Api-Key` header (or `Authorization: Bearer <key>`)
+- Auth: sign in with OAuth (no key to copy), or your NukeBG API key in the `X-Api-Key` header (or `Authorization: Bearer <key>`)
 - Docs: https://nukebg.com/mcp-server
 - API reference: https://nukebg.com/docs
 
@@ -19,7 +19,18 @@ NukeBG runs a remote [Model Context Protocol](https://modelcontextprotocol.io) s
 
 Inputs are a public `image_url` or `image_base64`. Results come back as a download link valid for 24 hours, plus the image inline when it's under 1.5 MB. Failed calls are never charged.
 
-## Connect a client
+## Sign in with OAuth
+
+Clients that support MCP authorization connect with just the URL and open a NukeBG sign-in page, so there is no key to copy:
+
+- **Claude** (claude.ai, Desktop, mobile): Customize > Connectors > Add custom connector, URL `https://api.nukebg.com/mcp`, then Connect.
+- **ChatGPT** (developer mode): create an app with the URL and OAuth authentication.
+- **Claude Code**: `claude mcp add --transport http nukebg https://api.nukebg.com/mcp`, then `/mcp` > Authenticate.
+- **Cursor, VS Code**: add the URL without headers; they prompt you to sign in.
+
+The server follows the [MCP authorization spec](https://modelcontextprotocol.io/specification/2025-11-25/basic/authorization): protected resource metadata at `https://api.nukebg.com/.well-known/oauth-protected-resource/mcp`, authorization server `https://nukebg.com` (PKCE S256, Client ID Metadata Documents and dynamic client registration), tokens bound to the MCP resource. Tool calls spend the signed-in account's credits. Disconnect apps on your [account page](https://nukebg.com/account).
+
+## Connect with an API key
 
 Create an API key at https://nukebg.com/account first.
 
@@ -97,7 +108,7 @@ curl -s https://api.nukebg.com/mcp -H "content-type: application/json" -H "X-Api
   -d '{"jsonrpc":"2.0","id":1,"method":"tools/call","params":{"name":"get_credits","arguments":{}}}'
 ```
 
-Or run the MCP Inspector: `npx @modelcontextprotocol/inspector`, choose Streamable HTTP, enter the URL and add the `X-Api-Key` header.
+Or run the MCP Inspector: `npx @modelcontextprotocol/inspector`, choose Streamable HTTP and enter the URL. Call a tool and it walks you through the NukeBG sign-in; or add the `X-Api-Key` header instead.
 
 ## About
 
