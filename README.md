@@ -23,10 +23,25 @@ Inputs are a public `image_url` or `image_base64`. Results come back as a downlo
 
 Create an API key at https://nukebg.com/account first.
 
-**Claude Code**
+**Claude Code plugin** (MCP server plus the `nukebg-images` skill)
+
+This repo is a Claude Code plugin marketplace. Set `NUKEBG_API_KEY` in your environment, then:
+
+```bash
+claude plugin marketplace add nukebg/nukebg-mcp
+claude plugin install nukebg@nukebg
+```
+
+**Claude Code** (MCP server only)
 
 ```bash
 claude mcp add --transport http nukebg https://api.nukebg.com/mcp --header "X-Api-Key: YOUR_KEY"
+```
+
+**Gemini CLI** (extension; set `NUKEBG_API_KEY` first)
+
+```bash
+gemini extensions install https://github.com/nukebg/nukebg-mcp
 ```
 
 **Cursor** (`~/.cursor/mcp.json`) and **Windsurf**
@@ -70,6 +85,10 @@ claude mcp add --transport http nukebg https://api.nukebg.com/mcp --header "X-Ap
   }
 }
 ```
+
+## Agent skill
+
+[`skills/nukebg-images/SKILL.md`](skills/nukebg-images/SKILL.md) teaches an agent when and how to use NukeBG, with or without the MCP server (it falls back to the REST API). It uses only the standard `name`, `description`, `license` and `compatibility` fields, so the same folder works as a Claude Code skill and as an uploaded skill on claude.ai or the Claude API.
 
 ## Test it
 

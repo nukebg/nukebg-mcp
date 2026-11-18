@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "nukebg": {
+      "type": "http",
+      "url": "https://api.nukebg.com/mcp",
+      "headers": {
+        "X-Api-Key": "${NUKEBG_API_KEY}"
+      }
+    }
+  }
+}

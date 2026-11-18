@@ -1,0 +1,15 @@
+{
+  "name": "nukebg",
+  "owner": {
+    "name": "NukeBG",
+    "url": "https://nukebg.com"
+  },
+  "description": "Official NukeBG plugin: background removal, object removal and upscaling for Claude Code.",
+  "plugins": [
+    {
+      "name": "nukebg",
+      "source": "./",
+      "description": "Remove image backgrounds, remove objects and upscale images with NukeBG."
+    }
+  ]
+}
