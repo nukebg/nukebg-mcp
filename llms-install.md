@@ -2,6 +2,8 @@
 
 NukeBG is a hosted (remote) MCP server. There is nothing to download or build.
 
+If the client supports MCP OAuth (remote servers with sign-in), add `https://api.nukebg.com/mcp` with no headers and the user signs in to NukeBG when a tool is first used. Otherwise use an API key:
+
 1. Ask the user for their NukeBG API key. If they don't have one, they can create it at https://nukebg.com/account (new accounts get 50 free credits).
 2. Add this server to the MCP settings, replacing YOUR_KEY with the key:
 
